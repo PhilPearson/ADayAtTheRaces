@@ -62,14 +62,24 @@ namespace ADayAtTheRaces
 
 		private void button2_Click(object sender, EventArgs e)
 		{
-			foreach(Greyhound g in Dogs)
-			{
-				if (g.Run())
-				{
-					//we have a winner
-					break;
-				}
-			}
+            bool winner = false;
+            while (!winner)
+            {
+                foreach (Greyhound g in Dogs)
+                {
+                    winner = g.Run();
+                    System.Threading.Thread.Sleep(10);
+                    if(winner)
+                    {
+                        MessageBox.Show(g.Name + " won the race");
+                        Dogs[0].TakeStartingPostion();
+                        Dogs[1].TakeStartingPostion();
+                        Dogs[2].TakeStartingPostion();
+                        Dogs[3].TakeStartingPostion();
+                        break;
+                    }
+                }
+            }
 		}
 	}
 }

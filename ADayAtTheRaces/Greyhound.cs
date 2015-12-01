@@ -6,11 +6,11 @@ namespace ADayAtTheRaces
 {
 	class Greyhound
 	{
-		public int StartinPosition;
+		public int StartingPosition;
 		public int RacetrackLength;
         public PictureBox MyPictureBox = null;
 		public int Location = 0;
-		public Random Randomizer;
+        public Random Randomizer;
 		public string Name;
 
 		public bool Run()
@@ -26,7 +26,7 @@ namespace ADayAtTheRaces
 			MyPictureBox.Location = p;
 
 			//return true if i won the race
-			if (p.X >= 400)
+			if (p.X >= 480)
 				return (true);
 			else
 			{
@@ -37,7 +37,7 @@ namespace ADayAtTheRaces
 		{
 			//reset my position to the starting point
 			Point p = MyPictureBox.Location;
-			p.X = 0;
+			p.X = 20;
 			MyPictureBox.Location = p;
 		}
 	}
