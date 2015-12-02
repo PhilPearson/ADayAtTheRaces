@@ -14,6 +14,7 @@ namespace ADayAtTheRaces
 	{
 		Guy[] Girls = new Guy[3];
 		Greyhound[] Dogs = new Greyhound[4];
+		Random myRandom = new Random();
 
 		public Form1()
 		{
@@ -23,41 +24,55 @@ namespace ADayAtTheRaces
 			{
 				Name = "Hannah",
 				MyLabel = betsLabel1,
-				MyRadioButton = radioButton1
+				MyRadioButton = radioButton1,
+				Cash = 400
 			};
 			Girls[1] = new Guy()
 			{
 				Name = "Elissa",
 				MyLabel = betsLabel2,
-				MyRadioButton = radioButton2
+				MyRadioButton = radioButton2,
+				Cash = 400
 			};
 			Girls[2] = new Guy()
 			{
 				Name = "Teagan",
 				MyLabel = betsLabel3,
-				MyRadioButton = radioButton3
+				MyRadioButton = radioButton3,
+				Cash = 400
 			};
+			foreach(Guy g in Girls)
+			{
+				g.UpdateLabels();
+			}
 
 			Dogs[0] = new Greyhound()
 			{
-				Name = "Dog1",
-				MyPictureBox = dogPictureBox1
+				Name = "Skipper",
+				MyPictureBox = dogPictureBox1,
+				Randomizer = myRandom
 			};
 			Dogs[1] = new Greyhound()
 			{
-				Name = "Dog2",
-				MyPictureBox = dogPictureBox2
+				Name = "Prancer",
+				MyPictureBox = dogPictureBox2,
+                Randomizer = myRandom
 			};
 			Dogs[2] = new Greyhound()
 			{
-				Name = "Dog3",
-				MyPictureBox = dogPictureBox3
+				Name = "Stinker",
+				MyPictureBox = dogPictureBox3,
+                Randomizer = myRandom
 			};
 			Dogs[3] = new Greyhound()
 			{
-				Name = "Dog4",
-				MyPictureBox = dogPictureBox4
+				Name = "Speedy Gonzalez",
+				MyPictureBox = dogPictureBox4,
+                Randomizer = myRandom
 			};
+
+			betAmount.Minimum = 5;
+            minimumBet.Text = "Minimum bet: " + betAmount.Minimum + " bucks";
 		}
 
 		private void button2_Click(object sender, EventArgs e)
@@ -68,7 +83,7 @@ namespace ADayAtTheRaces
                 foreach (Greyhound g in Dogs)
                 {
                     winner = g.Run();
-                    System.Threading.Thread.Sleep(10);
+                   // System.Threading.Thread.Sleep(10);
                     if(winner)
                     {
                         MessageBox.Show(g.Name + " won the race");
@@ -80,6 +95,16 @@ namespace ADayAtTheRaces
                     }
                 }
             }
+		}
+
+		private void btnBets_Click(object sender, EventArgs e)
+		{
+			if (radioButton1.Checked)
+				Girls[0].PlaceBet((int)betAmount.Value, (int)dogNumber.Value-1);
+			else if (radioButton2.Checked)
+				Girls[1].PlaceBet((int)betAmount.Value, (int)dogNumber.Value-1);
+			else if (radioButton3.Checked)
+				Girls[2].PlaceBet((int)betAmount.Value, (int)dogNumber.Value-1);
 		}
 	}
 }

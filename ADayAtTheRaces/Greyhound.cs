@@ -17,7 +17,7 @@ namespace ADayAtTheRaces
 		{
 			//run forward 1,2,3 or 4 spaces at random
 			int distance;
-			Randomizer = new Random();
+			//Randomizer = new Random();
 			distance = Randomizer.Next(1,4); 
 
 			//update the postion of the my picturebox
