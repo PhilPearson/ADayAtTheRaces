@@ -43,7 +43,7 @@
 			this.label3 = new System.Windows.Forms.Label();
 			this.betAmount = new System.Windows.Forms.NumericUpDown();
 			this.btnBets = new System.Windows.Forms.Button();
-			this.label2 = new System.Windows.Forms.Label();
+			this.betterLabel = new System.Windows.Forms.Label();
 			this.radioButton3 = new System.Windows.Forms.RadioButton();
 			this.radioButton2 = new System.Windows.Forms.RadioButton();
 			this.radioButton1 = new System.Windows.Forms.RadioButton();
@@ -120,7 +120,7 @@
 			this.groupBox1.Controls.Add(this.label3);
 			this.groupBox1.Controls.Add(this.betAmount);
 			this.groupBox1.Controls.Add(this.btnBets);
-			this.groupBox1.Controls.Add(this.label2);
+			this.groupBox1.Controls.Add(this.betterLabel);
 			this.groupBox1.Controls.Add(this.radioButton3);
 			this.groupBox1.Controls.Add(this.radioButton2);
 			this.groupBox1.Controls.Add(this.radioButton1);
@@ -227,14 +227,14 @@
 			this.btnBets.UseVisualStyleBackColor = true;
 			this.btnBets.Click += new System.EventHandler(this.btnBets_Click);
 			// 
-			// label2
+			// betterLabel
 			// 
-			this.label2.AutoSize = true;
-			this.label2.Location = new System.Drawing.Point(11, 127);
-			this.label2.Name = "label2";
-			this.label2.Size = new System.Drawing.Size(45, 13);
-			this.label2.TabIndex = 4;
-			this.label2.Text = "Hannah";
+			this.betterLabel.AutoSize = true;
+			this.betterLabel.Location = new System.Drawing.Point(11, 127);
+			this.betterLabel.Name = "betterLabel";
+			this.betterLabel.Size = new System.Drawing.Size(45, 13);
+			this.betterLabel.TabIndex = 4;
+			this.betterLabel.Text = "Hannah";
 			// 
 			// radioButton3
 			// 
@@ -246,6 +246,7 @@
 			this.radioButton3.TabStop = true;
 			this.radioButton3.Text = "Teagan";
 			this.radioButton3.UseVisualStyleBackColor = true;
+			this.radioButton3.CheckedChanged += new System.EventHandler(this.radioButton3_CheckedChanged);
 			// 
 			// radioButton2
 			// 
@@ -257,6 +258,7 @@
 			this.radioButton2.TabStop = true;
 			this.radioButton2.Text = "Elissa";
 			this.radioButton2.UseVisualStyleBackColor = true;
+			this.radioButton2.CheckedChanged += new System.EventHandler(this.radioButton2_CheckedChanged);
 			// 
 			// radioButton1
 			// 
@@ -268,6 +270,7 @@
 			this.radioButton1.TabStop = true;
 			this.radioButton1.Text = "Hannah";
 			this.radioButton1.UseVisualStyleBackColor = true;
+			this.radioButton1.CheckedChanged += new System.EventHandler(this.radioButton1_CheckedChanged);
 			// 
 			// minimumBet
 			// 
@@ -321,7 +324,7 @@
 		private System.Windows.Forms.Label label3;
 		private System.Windows.Forms.NumericUpDown betAmount;
 		private System.Windows.Forms.Button btnBets;
-		private System.Windows.Forms.Label label2;
+		private System.Windows.Forms.Label betterLabel;
 		private System.Windows.Forms.RadioButton radioButton3;
 		private System.Windows.Forms.RadioButton radioButton2;
 		private System.Windows.Forms.RadioButton radioButton1;

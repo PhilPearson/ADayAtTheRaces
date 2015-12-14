@@ -51,6 +51,7 @@ namespace ADayAtTheRaces
 		public void Collect(int Winner)
 		{
 			//ask my bet to pay out
+			MyBet.PayOut(Winner);
 		}
 	}
 }

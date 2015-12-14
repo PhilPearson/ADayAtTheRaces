@@ -78,12 +78,15 @@ namespace ADayAtTheRaces
 		private void button2_Click(object sender, EventArgs e)
 		{
             bool winner = false;
+			button2.Enabled = false;
             while (!winner)
             {
+				int count = 0;
                 foreach (Greyhound g in Dogs)
                 {
+					count += 1;
                     winner = g.Run();
-                   // System.Threading.Thread.Sleep(10);
+                    System.Threading.Thread.Sleep(10);
                     if(winner)
                     {
                         MessageBox.Show(g.Name + " won the race");
@@ -91,10 +94,15 @@ namespace ADayAtTheRaces
                         Dogs[1].TakeStartingPostion();
                         Dogs[2].TakeStartingPostion();
                         Dogs[3].TakeStartingPostion();
+						foreach(Guy f in Girls)
+						{
+							f.Collect(count);
+						}
                         break;
                     }
                 }
             }
+			button2.Enabled = true;
 		}
 
 		private void btnBets_Click(object sender, EventArgs e)
@@ -105,6 +113,21 @@ namespace ADayAtTheRaces
 				Girls[1].PlaceBet((int)betAmount.Value, (int)dogNumber.Value-1);
 			else if (radioButton3.Checked)
 				Girls[2].PlaceBet((int)betAmount.Value, (int)dogNumber.Value-1);
+		}
+
+		private void radioButton1_CheckedChanged(object sender, EventArgs e)
+		{
+			betterLabel.Text = Girls[0].Name;
+		}
+
+		private void radioButton2_CheckedChanged(object sender, EventArgs e)
+		{
+			betterLabel.Text = Girls[1].Name;
+		}
+
+		private void radioButton3_CheckedChanged(object sender, EventArgs e)
+		{
+			betterLabel.Text = Girls[2].Name;
 		}
 	}
 }
