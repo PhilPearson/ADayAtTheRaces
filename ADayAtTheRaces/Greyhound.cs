@@ -10,14 +10,13 @@ namespace ADayAtTheRaces
 		public int RacetrackLength;
         public PictureBox MyPictureBox = null;
 		public int Location = 0;
-        public Random Randomizer;
+        public Random Randomizer;					//the same Random object gets assigned to all dogs
 		public string Name;
 
 		public bool Run()
 		{
 			//run forward 1,2,3 or 4 spaces at random
 			int distance;
-			//Randomizer = new Random();
 			distance = Randomizer.Next(1,4); 
 
 			//update the postion of the my picturebox
@@ -26,7 +25,7 @@ namespace ADayAtTheRaces
 			MyPictureBox.Location = p;
 
 			//return true if i won the race
-			if (p.X >= 480)
+			if (p.X >= RacetrackLength)
 				return (true);
 			else
 			{
@@ -37,7 +36,7 @@ namespace ADayAtTheRaces
 		{
 			//reset my position to the starting point
 			Point p = MyPictureBox.Location;
-			p.X = 20;
+			p.X = StartingPosition;
 			MyPictureBox.Location = p;
 		}
 	}

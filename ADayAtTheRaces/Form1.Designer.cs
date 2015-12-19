@@ -39,7 +39,6 @@
 			this.betsLabel2 = new System.Windows.Forms.Label();
 			this.betsLabel1 = new System.Windows.Forms.Label();
 			this.label4 = new System.Windows.Forms.Label();
-			this.dogNumber = new System.Windows.Forms.NumericUpDown();
 			this.label3 = new System.Windows.Forms.Label();
 			this.betAmount = new System.Windows.Forms.NumericUpDown();
 			this.btnBets = new System.Windows.Forms.Button();
@@ -48,13 +47,13 @@
 			this.radioButton2 = new System.Windows.Forms.RadioButton();
 			this.radioButton1 = new System.Windows.Forms.RadioButton();
 			this.minimumBet = new System.Windows.Forms.Label();
+			this.comboBox1 = new System.Windows.Forms.ComboBox();
 			((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
 			((System.ComponentModel.ISupportInitialize)(this.dogPictureBox1)).BeginInit();
 			((System.ComponentModel.ISupportInitialize)(this.dogPictureBox2)).BeginInit();
 			((System.ComponentModel.ISupportInitialize)(this.dogPictureBox4)).BeginInit();
 			((System.ComponentModel.ISupportInitialize)(this.dogPictureBox3)).BeginInit();
 			this.groupBox1.SuspendLayout();
-			((System.ComponentModel.ISupportInitialize)(this.dogNumber)).BeginInit();
 			((System.ComponentModel.ISupportInitialize)(this.betAmount)).BeginInit();
 			this.SuspendLayout();
 			// 
@@ -111,12 +110,12 @@
 			// 
 			// groupBox1
 			// 
+			this.groupBox1.Controls.Add(this.comboBox1);
 			this.groupBox1.Controls.Add(this.button2);
 			this.groupBox1.Controls.Add(this.betsLabel3);
 			this.groupBox1.Controls.Add(this.betsLabel2);
 			this.groupBox1.Controls.Add(this.betsLabel1);
 			this.groupBox1.Controls.Add(this.label4);
-			this.groupBox1.Controls.Add(this.dogNumber);
 			this.groupBox1.Controls.Add(this.label3);
 			this.groupBox1.Controls.Add(this.betAmount);
 			this.groupBox1.Controls.Add(this.btnBets);
@@ -179,40 +178,23 @@
 			this.label4.TabIndex = 9;
 			this.label4.Text = "Bets";
 			// 
-			// dogNumber
-			// 
-			this.dogNumber.Location = new System.Drawing.Point(330, 123);
-			this.dogNumber.Maximum = new decimal(new int[] {
-            4,
-            0,
-            0,
-            0});
-			this.dogNumber.Minimum = new decimal(new int[] {
-            1,
-            0,
-            0,
-            0});
-			this.dogNumber.Name = "dogNumber";
-			this.dogNumber.Size = new System.Drawing.Size(53, 20);
-			this.dogNumber.TabIndex = 8;
-			this.dogNumber.Value = new decimal(new int[] {
-            1,
-            0,
-            0,
-            0});
-			// 
 			// label3
 			// 
 			this.label3.AutoSize = true;
 			this.label3.Location = new System.Drawing.Point(211, 127);
 			this.label3.Name = "label3";
-			this.label3.Size = new System.Drawing.Size(110, 13);
+			this.label3.Size = new System.Drawing.Size(51, 13);
 			this.label3.TabIndex = 7;
-			this.label3.Text = "bucks on dog number";
+			this.label3.Text = "bucks on";
 			// 
 			// betAmount
 			// 
 			this.betAmount.Location = new System.Drawing.Point(152, 123);
+			this.betAmount.Maximum = new decimal(new int[] {
+            15,
+            0,
+            0,
+            0});
 			this.betAmount.Name = "betAmount";
 			this.betAmount.Size = new System.Drawing.Size(53, 20);
 			this.betAmount.TabIndex = 6;
@@ -282,6 +264,14 @@
 			this.minimumBet.TabIndex = 0;
 			this.minimumBet.Text = "Minimum Bet";
 			// 
+			// comboBox1
+			// 
+			this.comboBox1.FormattingEnabled = true;
+			this.comboBox1.Location = new System.Drawing.Point(268, 122);
+			this.comboBox1.Name = "comboBox1";
+			this.comboBox1.Size = new System.Drawing.Size(121, 21);
+			this.comboBox1.TabIndex = 14;
+			// 
 			// Form1
 			// 
 			this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -305,7 +295,6 @@
 			((System.ComponentModel.ISupportInitialize)(this.dogPictureBox3)).EndInit();
 			this.groupBox1.ResumeLayout(false);
 			this.groupBox1.PerformLayout();
-			((System.ComponentModel.ISupportInitialize)(this.dogNumber)).EndInit();
 			((System.ComponentModel.ISupportInitialize)(this.betAmount)).EndInit();
 			this.ResumeLayout(false);
 
@@ -320,7 +309,6 @@
 		private System.Windows.Forms.PictureBox dogPictureBox3;
 		private System.Windows.Forms.GroupBox groupBox1;
 		private System.Windows.Forms.Label label4;
-		private System.Windows.Forms.NumericUpDown dogNumber;
 		private System.Windows.Forms.Label label3;
 		private System.Windows.Forms.NumericUpDown betAmount;
 		private System.Windows.Forms.Button btnBets;
@@ -333,6 +321,7 @@
 		private System.Windows.Forms.Label betsLabel3;
 		private System.Windows.Forms.Label betsLabel2;
 		private System.Windows.Forms.Label betsLabel1;
+		private System.Windows.Forms.ComboBox comboBox1;
 	}
 }
 
