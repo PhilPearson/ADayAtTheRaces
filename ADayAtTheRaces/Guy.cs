@@ -34,7 +34,7 @@ namespace ADayAtTheRaces
 		public bool PlaceBet(int Amount, Greyhound Dog)
 		{
 			//check to see if we have enough cash first
-			if (Amount < Cash)
+			if (Amount <= Cash)
 			{
 				//create the bet, assign the amount, dog and who placed the bet. Finish up by updating labels
 				MyBet = new Bet();
